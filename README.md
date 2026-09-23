@@ -6,7 +6,7 @@ A mobile-first spelling practice site. The child page speaks each word and shows
 
 1. Create a GitHub repository and upload both `index.html` and `grownups.html` to its root.
 2. In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-3. Open the Pages URL on the kids' devices. The **Grown-up corner** link opens the setup page.
+3. Open the Pages URL in Safari on each iPad. Use **Share → Add to Home Screen** and enable **Open as Web App** if shown. The **Grown-up corner** link opens the setup page.
 
 Each browser/device keeps its own profiles, lists, and progress in local storage. Clearing browser data can erase them; devices do not sync.
 
@@ -15,3 +15,7 @@ Each browser/device keeps its own profiles, lists, and progress in local storage
 Open **Grown-up corner**, select a profile, and paste words on separate lines or separated by commas. Use **Clear this list** before entering a fresh week. The starter words are placeholders. You can add more profiles.
 
 The browser speaks words with its built-in speech voice. Pronunciation depends on the device, and volume must be on. Tap letter tiles to build a word; dragging is also supported where available.
+
+## Offline use
+
+After the site loads once online, the app shell is cached for offline practice. The word lists and progress remain stored locally in that browser or installed web app. Speech uses the iPad voice available to Safari and may vary offline. To receive site updates, open the app while online.

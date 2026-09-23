@@ -14,7 +14,7 @@ Each browser/device keeps its own profiles, lists, and progress in local storage
 
 Open **Grown-up corner**, select a profile, and paste words on separate lines or separated by commas. Use **Clear this list** before entering a fresh week. The starter words are placeholders. You can add more profiles.
 
-The browser speaks words with its built-in speech voice. Pronunciation depends on the device, and volume must be on. Tap letter tiles to build a word; dragging is also supported where available.
+For unusual words, enter a **Pronounce as** hint beside the word (for example, Jockisch → Yoke ish) and preview it with the speaker. The spelling answer stays the original word. You can choose an available voice and speaking speed in the grown-up corner. The child page shows a streak for consecutive correct answers; an incorrect full answer resets it. Tap letter tiles to build a word; dragging is also supported where available.
 
 ## Offline use
 

@@ -1,5 +1,5 @@
-const CACHE = 'spell-sprout-v3';
-const SHELL = ['./', './index.html', './grownups.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
+const CACHE = 'spell-sprout-v4';
+const SHELL = ['./', './index.html', './grownups.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png', './correct.wav', './try-again.wav'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });

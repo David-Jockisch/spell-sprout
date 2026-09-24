@@ -1,21 +1,23 @@
-# Spell Sprout
+# Learning Garden
 
-A mobile-first spelling practice site. The child page speaks each word and shows letter tiles with extra letters; the spelling list is only visible on the separate grown-up page.
+A mobile-first learning site for spelling and math, with one shared learner list and separate grown-up settings for each subject. Grammar Grove is reserved for a future activity.
 
-## GitHub Pages
+**Live site:** https://david-jockisch.github.io/spell-sprout/
 
-1. Create a GitHub repository and upload both `index.html` and `grownups.html` to its root.
-2. In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-3. Open the Pages URL in Safari on each iPad. Use **Share → Add to Home Screen** and enable **Open as Web App** if shown. The **Grown-up corner** link opens the setup page.
+## iPad installation
 
-Each browser/device keeps its own profiles, lists, and progress in local storage. Clearing browser data can erase them; devices do not sync.
+Open the live site in Safari, tap **Share → Add to Home Screen**, enable **Open as Web App** if offered, then tap **Add**. If an older Spell Sprout shortcut is installed, remove that shortcut and add Learning Garden again to pick up the new name and flower icon. This does not delete the Safari site's saved learner data; storage in a standalone web app may be separate depending on iPadOS.
 
-## Weekly setup
+## Grown-up setup
 
-Open **Grown-up corner**, select a profile, and paste words on separate lines or separated by commas. Use **Clear this list** before entering a fresh week. The starter words are placeholders. You can add more profiles.
+Select a learner on Grown-ups home. Spelling settings hold weekly word lists, pronunciation hints, voice, speed, and answer sounds. Math settings choose operations, number ranges, missing-number practice, and a 10- or 15-question round. New rounds generate new questions and show first-try score and best streak.
 
-For unusual words, enter a **Pronounce as** hint beside the word (for example, Jockisch → Yoke ish) and preview it with the speaker. The spelling answer stays the original word. You can choose an available voice and speaking speed in the grown-up corner. The child page shows a streak for consecutive correct answers; an incorrect full answer resets it. Answer chimes can be previewed or turned off in the grown-up corner. Tap letter tiles to build a word; dragging is also supported where available.
+Profiles, lists, settings, and progress are stored locally on each device. Devices do not sync. The production site retains the existing `spell-sprout-v1` browser storage key, so previous spelling data remains available in the same browser context. Clearing site data can erase it.
 
-## Offline use
+After the site loads online, its service worker caches the pages, styles, scripts, icons, and answer chimes for offline practice. Speech depends on the voices available on the iPad.
 
-After the site loads once online, the app shell is cached for offline practice. The word lists and progress remain stored locally in that browser or installed web app. Speech uses the iPad voice available to Safari and may vary offline. To receive site updates, open the app while online.
+## Files
+
+`index.html` is Spell Sprout; `math.html` is Math Meadow; `parents.html` is the shared grown-ups home. `grownups.html` and `math-settings.html` hold subject-specific settings. `manifest.webmanifest` and `sw.js` make the site installable and available offline.
+
+The earlier spelling-only source is preserved in Git history at commit `3997184895a0957c099edd71c4945fdacf5d4a0e`.

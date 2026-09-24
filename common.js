@@ -1,0 +1,4 @@
+
+const KEY='spell-sprout-v1';const initial={profiles:[{id:'one',name:'First grader',words:['cat','ship','duck','quick','sock'],done:[]},{id:'three',name:'Third grader',words:['garden','bright','window','pencil','favorite'],done:[]}],active:'one'};
+let data;try{data=JSON.parse(localStorage.getItem(KEY))||structuredClone(initial)}catch{data=structuredClone(initial)}if(!Array.isArray(data.profiles)||!data.profiles.length)data=structuredClone(initial);
+function save(){localStorage.setItem(KEY,JSON.stringify(data))}function current(){return data.profiles.find(p=>p.id===data.active)||data.profiles[0]}function profiles(target,callback){target.replaceChildren();data.profiles.forEach(p=>{let b=document.createElement('button');b.className='profile'+(current().id===p.id?' active':'');b.textContent=p.name;b.onclick=()=>{data.active=p.id;save();profiles(target,callback);callback?.()};target.append(b)})}

@@ -1,4 +1,4 @@
-const CACHE = 'learning-garden-v2';
+const CACHE = 'learning-garden-v3';
 const SHELL = ['./', './index.html', './spelling.html', './grownups.html', './parents.html', './math.html', './math-settings.html', './grammar.html', './grammar-settings.html', './common.js', './math.js', './math-core.js', './math-settings.js', './math.css', './home.css', './shared.css', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png', './correct.wav', './try-again.wav'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));

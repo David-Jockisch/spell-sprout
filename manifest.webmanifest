@@ -1,7 +1,7 @@
 {
-  "name": "Spell Sprout",
-  "short_name": "Spell Sprout",
-  "description": "Listen and build weekly spelling words.",
+  "name": "Learning Garden",
+  "short_name": "Learning Garden",
+  "description": "Spelling and math practice for growing minds.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

@@ -1,10 +1,10 @@
-const CACHE = 'spell-sprout-v4';
-const SHELL = ['./', './index.html', './grownups.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png', './correct.wav', './try-again.wav'];
+const CACHE = 'learning-garden-v1';
+const SHELL = ['./', './index.html', './grownups.html', './parents.html', './math.html', './math-settings.html', './grammar.html', './grammar-settings.html', './common.js', './math.js', './math-core.js', './math-settings.js', './math.css', './shared.css', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png', './correct.wav', './try-again.wav'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', event => {
-  event.waitUntil(Promise.all([caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('spell-sprout-') && key !== CACHE).map(key => caches.delete(key)))), self.clients.claim()]));
+  event.waitUntil(Promise.all([caches.keys().then(keys => Promise.all(keys.filter(key => (key.startsWith('spell-sprout-') || key.startsWith('learning-garden-')) && key !== CACHE).map(key => caches.delete(key)))), self.clients.claim()]));
 });
 self.addEventListener('fetch', event => {
   const request = event.request;

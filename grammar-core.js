@@ -17,10 +17,27 @@ const GRAMMAR_SCENES = [
   {noun:'farmer',verbs:['works','waves'],adjectives:['busy','kind','strong'],adverbs:['carefully','happily']}
 ];
 function grammarConfig(profile){return {length:10,level:profile.id==='three'?'growing':'starter',...(profile.grammar||{})}}
+// Keep the part of speech on each word so the same sentences can support
+// other find-the-word activities later. Sentence patterns are cycled in a
+// shuffled order so an entire round cannot put the answer in one position.
+const GRAMMAR_PATTERNS = [
+  (n,a,v,d)=>[['The','determiner'],[a,'adjective'],[n,'noun'],[v,'verb'],[d,'adverb']],
+  (n,a)=>[['That','determiner'],[n,'noun'],['is','verb'],[a,'adjective']],
+  (n,a,v,d)=>[['Today,','adverb'],['the','determiner'],[n,'noun'],[v,'verb'],[d,'adverb'],['and','conjunction'],['looks','verb'],[a,'adjective']],
+  (n,a)=>[['Look','verb'],['at','preposition'],['the','determiner'],[a,'adjective'],[n,'noun']],
+  (n,a)=>[['The','determiner'],[n,'noun'],['looks','verb'],[a,'adjective'],['today','adverb']],
+  (n,a)=>[['I','pronoun'],['see','verb'],['a','determiner'],[a,'adjective'],[n,'noun']],
+  (n,a)=>[['A','determiner'],[n,'noun'],['can','verb'],['be','verb'],[a,'adjective']]
+];
 function grammarRound(config, previousKeys=new Set(), random=Math.random){
   const scenes=config.level==='starter'?GRAMMAR_SCENES.slice(0,10):GRAMMAR_SCENES;
   const length=config.length===15?15:10, used=new Set(), result=[];
   const pick=items=>items[Math.floor(random()*items.length)];
+  let patterns=[];
+  function nextPattern(){
+    if(!patterns.length){patterns=GRAMMAR_PATTERNS.map((_,i)=>i);for(let j=patterns.length-1;j>0;j--){let k=Math.floor(random()*(j+1));[patterns[j],patterns[k]]=[patterns[k],patterns[j]]}}
+    return GRAMMAR_PATTERNS[patterns.pop()];
+  }
   for(let i=0;i<length;i++){
     let scene,adjective,verb,adverb,key;
     for(let attempt=0;attempt<150;attempt++){
@@ -47,14 +64,8 @@ function grammarRound(config, previousKeys=new Set(), random=Math.random){
       }
     }
     used.add(key);
-    result.push({key,tokens:[
-      {text:'The',part:'determiner'},
-      {text:adjective,part:'adjective'},
-      {text:scene.noun,part:'noun'},
-      {text:verb,part:'verb'},
-      {text:adverb,part:'adverb'}
-    ]});
+    result.push({key,tokens:nextPattern()(scene.noun,adjective,verb,adverb).map(([text,part])=>({text,part}))});
   }
   return result;
 }
-if(typeof module!=='undefined')module.exports={GRAMMAR_SCENES,grammarConfig,grammarRound};
+if(typeof module!=='undefined')module.exports={GRAMMAR_SCENES,GRAMMAR_PATTERNS,grammarConfig,grammarRound};

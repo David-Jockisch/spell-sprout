@@ -1,6 +1,6 @@
 # Learning Garden
 
-A mobile-first learning site for spelling and math, with one shared learner list and separate grown-up settings for each subject. Grammar Grove is reserved for a future activity.
+A mobile-first learning site for spelling, math, and grammar, with one shared learner list and separate grown-up settings for each subject. Grammar Grove starts with generated sentences for identifying adjectives.
 
 **Live site:** https://david-jockisch.github.io/spell-sprout/
 
@@ -10,7 +10,7 @@ Open the live site in Safari, tap **Share → Add to Home Screen**, enable **Ope
 
 ## Grown-up setup
 
-Select a learner on Grown-ups home. Spelling settings hold weekly word lists, pronunciation hints, voice, speed, and answer sounds. Math settings choose operations, number ranges, missing-number practice, and a 10- or 15-question round. New rounds generate new questions and show first-try score and best streak. The home page shows the saved best spelling and math streak for each learner.
+Manage learners on Profiles and select one on each subject settings page. Spelling settings hold weekly word lists, pronunciation hints, voice, speed, and answer sounds. Math settings choose operations, number ranges, missing-number practice, and a 10- or 15-question round. New rounds generate new questions and show first-try score and best streak. The home page shows saved best streaks and perfect rounds for spelling, math, and grammar.
 
 Profiles, lists, settings, and progress are stored locally on each device. Devices do not sync. The production site retains the existing `spell-sprout-v1` browser storage key, so previous spelling data remains available in the same browser context. Clearing site data can erase it.
 

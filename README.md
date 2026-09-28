@@ -1,6 +1,6 @@
 # Learning Garden
 
-A mobile-first learning site for spelling, math, and grammar, with one shared learner list and separate grown-up settings for each subject. Grammar Grove generates tappable sentences for finding adjectives, nouns, and verbs.
+A mobile-first learning site for spelling, math, and grammar, with one shared learner list and separate grown-up settings for each subject. Grammar Grove lets children choose noun, verb, or adjective rounds from its course cards. Each round has tappable generated sentences.
 
 **Live site:** https://david-jockisch.github.io/spell-sprout/
 

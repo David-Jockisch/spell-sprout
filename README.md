@@ -10,7 +10,7 @@ Open the live site in Safari, tap **Share → Add to Home Screen**, enable **Ope
 
 ## Grown-up setup
 
-Manage learners on Profiles and select one on each subject settings page. Profiles holds each learner’s voice and speaking speed for spoken practice across subjects. Spelling settings hold weekly word lists, pronunciation hints, and answer sounds. Math settings choose operations, number ranges, missing-number practice, and a 10- or 15-question round. New rounds generate new questions and show first-try score and best streak. The home page shows saved best streaks and perfect rounds for spelling, math, and grammar.
+Manage learners on Profiles and select one on each subject settings page. Profiles holds each learner’s voice and speaking speed for spoken practice across subjects. Spell Sprout uses a full on-screen alphabet keyboard without device autocorrect. Spelling settings hold weekly word lists, pronunciation hints, and answer sounds. Math settings choose operations, number ranges, missing-number practice, and a 10- or 15-question round. New rounds generate new questions and show first-try score and best streak. The home page shows saved best streaks and perfect rounds for spelling, math, and grammar.
 
 Profiles, lists, settings, and progress are stored locally on each device. Devices do not sync. The production site retains the existing `spell-sprout-v1` browser storage key, so previous spelling data remains available in the same browser context. Clearing site data can erase it.
 
